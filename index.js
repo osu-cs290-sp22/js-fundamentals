@@ -140,3 +140,55 @@ function printArrayElem(elem, idx) {
 
 console.log("== Using forEach() with named function:")
 array.forEach(printArrayElem)
+
+console.log("=======================")
+console.log("== Objects")
+console.log("=======================\n")
+
+var obj = {
+    'cat': 'cute',
+    'dog': 'loyal',
+    'lizard': 'weird'
+}
+console.log("== obj['cat']:", obj['cat'])
+
+var person = {
+    firstName: "Luke",
+    lastName: "Skywalker",
+    age: 23,
+    getFullName: function () {
+        return this.firstName + " " + this.lastName
+    }
+}
+console.log("== person['firstName']:", person['firstName'])
+console.log("== person.firstName:", person.firstName)
+person.age = 24
+console.log("== person.age:", person.age)
+console.log("== person.getFullName():", person.getFullName())
+
+var fieldName = "firstName"
+console.log("== person[fieldName]:", person[fieldName])
+
+console.log("=======================")
+console.log("== Classes")
+console.log("=======================\n")
+
+function Person(firstName, lastName) {
+    this.firstName = firstName
+    this.lastName = lastName
+}
+
+Person.prototype.getFullName = function () {
+    return this.firstName + " " + this.lastName
+}
+
+var p1 = new Person("Leia", "Organa")
+console.log("== p1.firstName:", p1.firstName)
+console.log("== p1.lastName:", p1.lastName)
+console.log("== p1.getFullName():", p1.getFullName())
+console.log("== p1:", p1)
+
+var p2 = new Person("Rey", "???")
+console.log("== p2.firstName:", p2.firstName)
+console.log("== p2.lastName:", p2.lastName)
+console.log("== p2.getFullName():", p2.getFullName())
